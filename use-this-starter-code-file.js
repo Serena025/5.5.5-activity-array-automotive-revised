@@ -52,21 +52,10 @@ class Vehicle {
 		}
 	}
 	stop() {
-		this.started = false;
+		console.log('engine off')
+		this.started = false; 
 	}
-
-	//optional methods to code for the Vehicle base class
-
-	drive() {
-		accelerate();
-	}
-	brake() {
-		decelerate();
-	}
-
-	autoPark() {}
-
-	autoDrive() {}
+	
 
 	typeOfVehicle(wheels) {
 		if (this.numberOfWheels == 8 && 8 == wheels) {
@@ -81,41 +70,30 @@ class Vehicle {
 	}
 }
 
-//Code the Car subclass here, i.e. class Car extends Vehicle ...
+
+class Car extends Vehicle {
+	constructor(make, model, year, color, mileage){
+		super(make, model, year, color, mileage)
+	}
+}
 
 
-
-
-
-
-
-
-
-//Creating Instances and Testing Them
-
-
-//This is an instance of the Vehicle class. You can use it to test your code for the Vehicle class.
 
 let v = new Vehicle("Mercury", "Sedan", "1965", "color", "mileage");
 
 console.log(v.make);
 
-//You can use the same instance "v" of the Vehicle class and dot notation to add properties of the Car class to it, but you should also create at least one totally new instance with just the Car class and test it out with Vehicle and Car methods (such as with v.make shown above).
-
-
-//Create at least two new instances of the Car class and test them here:
 
 
 
+let tesla = new Car("Tesla", "420", "2017", "white", "100000");
 
 
 
 
+tesla.start()
+tesla.loadPassenger(5)
+tesla.stop()
+tesla.checkService()
 
-
-
-
-
-//Bonus (optional of course)
-
-//Code the Truck subclass of Vehicle here
+console.log(tesla)
